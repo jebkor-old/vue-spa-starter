@@ -10,7 +10,7 @@ All you need to use is a little bit of NPM and git, then you're good to go.
 
 ```
 git clone https://github.com/jebkor/vue-spa-starter
-cd  vue-spa-starter
+cd vue-spa-starter
 npm install
 npm start
 ```
