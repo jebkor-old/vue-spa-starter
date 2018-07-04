@@ -4,7 +4,7 @@
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
           <v-list-tile-action>
-            <v-icon>home</v-icon>
+            <v-icon>{{ link.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ link.name }}</v-list-tile-title>
