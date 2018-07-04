@@ -165,13 +165,8 @@
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-//
-//
-//
-//
-//
 //
 //
 //
@@ -210,13 +205,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    data: function data() {
-        return {
-            drawer: null,
-            message: "stuff",
-            routes: this.$router.options.routes
-        };
-    }
+  data: function data() {
+    return {
+      drawer: null,
+      message: "stuff",
+      routes: this.$router.options.routes
+    };
+  }
 };
 
 /***/ }),
@@ -408,7 +403,7 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
-          attrs: { fixed: "", temporary: "", app: "" },
+          attrs: { fixed: "", clipped: "", app: "" },
           model: {
             value: _vm.drawer,
             callback: function($$v) {
@@ -470,7 +465,21 @@ var render = function() {
               _c(
                 "v-layout",
                 { attrs: { row: "", wrap: "" } },
-                [_c("v-flex", { attrs: { xs12: "" } }, [_c("router-view")], 1)],
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "" } },
+                    [
+                      _c(
+                        "transition",
+                        { attrs: { name: "fade" } },
+                        [_c("router-view")],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
                 1
               )
             ],
@@ -909,6 +918,10 @@ var _About = __webpack_require__(/*! ../views/About.vue */ "./src/vue/views/Abou
 
 var _About2 = _interopRequireDefault(_About);
 
+var _Waterfall = __webpack_require__(/*! ../views/Waterfall.vue */ "./src/vue/views/Waterfall.vue");
+
+var _Waterfall2 = _interopRequireDefault(_Waterfall);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Routes = [{
@@ -919,6 +932,10 @@ var Routes = [{
     path: "/about",
     name: "About Page",
     component: _About2.default
+}, {
+    path: "/waterfall",
+    name: "Waterfall",
+    component: _Waterfall2.default
 }];
 
 exports.default = Routes;
@@ -1066,6 +1083,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Frontpage_vue_vue_type_template_id_6baceabe__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./src/vue/views/Waterfall.vue":
+/*!*************************************!*\
+  !*** ./src/vue/views/Waterfall.vue ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "src\\vue\\views\\Waterfall.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 

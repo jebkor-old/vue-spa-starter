@@ -2,6 +2,16 @@
 .stuff {
   color: #000000; }
 
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s; }
+
+.fade-enter-active {
+  transition-delay: .25s; }
+
+.fade-enter, .fade-leave-active {
+  opacity: 0; }
+
 
 div[data-v-57f2d167] {
   margin-top: 60px;

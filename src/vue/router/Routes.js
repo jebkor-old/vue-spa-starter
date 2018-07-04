@@ -1,5 +1,6 @@
 import Frontpage from "../views/Frontpage.vue";
 import About from "../views/About.vue";
+import Waterfall from "../views/Waterfall.vue";
 
 
 const Routes = [{

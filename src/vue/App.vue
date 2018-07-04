@@ -1,11 +1,6 @@
 <template>
-    <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      temporary
-      app
-    >
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" fixed clipped app>
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
           <v-list-tile-action>
@@ -28,9 +23,9 @@
         <v-layout row wrap>
           <v-flex xs12>
 
-
-            <router-view></router-view>
-
+            <transition name="fade">
+              <router-view></router-view>
+            </transition>
 
           </v-flex>
         </v-layout>
@@ -40,13 +35,13 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                drawer: null,
-                message: "stuff",
-                routes: this.$router.options.routes
-            }
-        },
-    }
+  export default {
+    data() {
+      return {
+        drawer: null,
+        message: "stuff",
+        routes: this.$router.options.routes
+      }
+    },
+  }
 </script>
