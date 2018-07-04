@@ -1,6 +1,8 @@
 <template>
     <div>
         {{ message }}
+
+        wfoew
     </div>
 </template>
 
