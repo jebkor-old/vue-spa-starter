@@ -1,15 +1,19 @@
 // import scss
 import "../scss/all.scss";
+import "vuetify/dist/vuetify.css";
 
 // import dependencies
 import Vue from "vue";
+import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 
 // import files
 import App from "../vue/App.vue";
 import Routes from "../vue/router/Routes";
+import "../vue/components/MyComponent";
 
 // create instance of vue "plugins"
+Vue.use(Vuetify);
 Vue.use(VueRouter);
 
 // add the routes to the application

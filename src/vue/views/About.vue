@@ -1,6 +1,7 @@
 <template>
     <div>
-        {{ message }}
+        <h1>About page</h1>
+        <p>{{ message }}</p>
     </div>
 </template>
 
@@ -8,7 +9,7 @@
     export default {
         data() {
             return {
-                message: "I am the about page"
+                message: "You face Jaraxxus, Eredar lord of the Burning Legion"
             }
         }        
     }

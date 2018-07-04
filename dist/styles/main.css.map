@@ -1,1 +1,1 @@
-{"version":3,"file":"styles/main.css","sources":["webpack:///./src/scss/all.scss"],"sourcesContent":[".stuff {\n  color: #000000; }\n"],"mappings":"AAAA;AACA;;","sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/scss/all.scss (1)","webpack:///./src/vue/components/MyComponent.vue?95fe"],"names":[],"mappings":";AAAA;AACA,iBAAiB;;;ACAjB;AACA;AACA;AACA;AACA;AACA","file":"styles/main.css","sourcesContent":[".stuff {\n  color: #000000; }\n","\ndiv[data-v-57f2d167] {\n  margin-top: 60px;\n}\nb[data-v-57f2d167] {\n  font-size: 22px;\n}\n"],"sourceRoot":""}
