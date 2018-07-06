@@ -4,13 +4,13 @@ const MiniExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: ['./src/scss/all.scss', './src/js/index.js'],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader?cacheDirectory'
       },
       {
         test: /\.vue$/,

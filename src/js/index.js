@@ -1,7 +1,3 @@
-// import scss
-import "../scss/all.scss";
-import "vuetify/dist/vuetify.css";
-
 // import dependencies
 import Vue from "vue";
 import Vuetify from "vuetify";

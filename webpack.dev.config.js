@@ -5,7 +5,8 @@ const baseConfig = require("./webpack.config");
 
 module.exports = merge(baseConfig, {
     output: {
-        filename: "[name].js"
+        filename: "[name].js",
+        pathinfo: false
     },
     devtool: "source-map"
 });
