@@ -1,8 +1,6 @@
 console.log('WORKER: executing.');
 
-var version = 'v2::';
-
-var another = "1.0.4";
+var version = '1.0.5::';
 
 var offlineFundamentals = ['', 'dist/'];
 
