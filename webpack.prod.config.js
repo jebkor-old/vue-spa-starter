@@ -12,11 +12,10 @@ module.exports = merge(baseConfig, {
     },
     devtool: "cheap-module-source-map",
     optimization: {
-      minimize: true,
       minimizer: [new UglifyJsPlugin({
-        include: /\.min\.js$/,
         uglifyOptions: {
-          compress: true
+          compress: true,
+          comments: false
         }
       })]
     }
