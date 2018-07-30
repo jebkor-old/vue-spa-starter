@@ -3,6 +3,15 @@ const path = require("path");
 const merge = require("webpack-merge");
 const baseConfig = require("./webpack.config");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+
+const minifyOpts = {
+
+};
+
+const pluginOpts = {
+  comments
+};
 
 module.exports = merge(baseConfig, {
     output: {
@@ -10,9 +19,9 @@ module.exports = merge(baseConfig, {
     },
     devtool: "cheap-module-source-map",
     plugins: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true
+      new webpack.optimize.UglifyJsPlugin({
+        include: /\.min\.js$/,
+        minimize: true
       })
     ]
 });

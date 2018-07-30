@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
-  <link rel="stylesheet" href="./dist/styles/vendor.css">
-  <link rel="stylesheet" href="./dist/styles/main.css">
 </head>
 
 <body>
@@ -16,6 +13,26 @@
   <div id="app"></div>
 
 
+
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" href="./dist/styles/vendor.css">
+  <link rel="stylesheet" href="./dist/styles/main.css">
+  </noscript>
+
+  <script type="text/javascript">
+    // Load CSS
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+    else window.addEventListener('load', loadDeferredStyles);
+  </script>
   <script src="./dist/vendor.min.js"></script>
   <script src="./dist/main.min.js"></script>
 
