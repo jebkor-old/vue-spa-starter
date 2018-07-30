@@ -14,6 +14,7 @@ gulp.task("vendor", function() {
 });
 
 
+// not currently in use, but feel free to use or change it for your needs
 gulp.task('css', () => {
   const postcss = require('gulp-postcss');
   const sourcemaps = require('gulp-sourcemaps');
@@ -47,4 +48,4 @@ gulp.task("sw", () => {
     .pipe(gulp.dest("./"));
 });
 
-gulp.task('default', ['css', 'sw']);
+gulp.task('default', ['sw']);
