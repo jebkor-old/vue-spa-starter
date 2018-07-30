@@ -12,7 +12,8 @@
     "start": "webpack --config webpack.dev.config.js --mode development --watch",
     "build": "npm-run-all -p -r css-vendor webpack-build",
     "webpack-build": "webpack --config webpack.prod.config.js --mode production",
-    "css-vendor": "gulp vendor"
+    "css-vendor": "gulp vendor",
+    "bump": "npm version patch && gulp"
   },
   "keywords": [],
   "author": "",
