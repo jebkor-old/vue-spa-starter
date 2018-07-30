@@ -15,7 +15,9 @@ module.exports = merge(baseConfig, {
       minimizer: [new UglifyJsPlugin({
         uglifyOptions: {
           compress: true,
-          comments: false
+          output: {
+            comments: false
+          }
         }
       })]
     }
