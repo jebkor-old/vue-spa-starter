@@ -18,10 +18,10 @@ module.exports = merge(baseConfig, {
         filename: "[name].min.js"
     },
     devtool: "cheap-module-source-map",
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        include: /\.min\.js$/,
-        minimize: true
-      })
-    ]
+    optimization: {
+      minimize: true,
+      minimizer: [new UglifyJsPlugin({
+        include: /\.min\.js$/
+      })]
+    }
 });
