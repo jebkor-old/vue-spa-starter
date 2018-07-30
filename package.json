@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-starter",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "webpack.config.js",
   "browserslist": [
