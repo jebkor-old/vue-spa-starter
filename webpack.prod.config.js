@@ -14,7 +14,10 @@ module.exports = merge(baseConfig, {
     optimization: {
       minimize: true,
       minimizer: [new UglifyJsPlugin({
-        include: /\.min\.js$/
+        include: /\.min\.js$/,
+        uglifyOptions: {
+          compress: true
+        }
       })]
     }
 });
