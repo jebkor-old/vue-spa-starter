@@ -5,13 +5,6 @@ const baseConfig = require("./webpack.config");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 
-const minifyOpts = {
-
-};
-
-const pluginOpts = {
-  comments
-};
 
 module.exports = merge(baseConfig, {
     output: {
