@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "webpack --config webpack.dev.config.js --mode development --watch",
-    "build": "npm-run-all -p -r webpack-build css-vendor",
+    "build": "npm-run-all -p -r css-vendor webpack-build",
     "webpack-build": "webpack --config webpack.prod.config.js --mode production",
     "css-vendor": "gulp vendor"
   },
@@ -29,6 +29,7 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.1",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "mini-css-extract-plugin": "^0.4.1",
