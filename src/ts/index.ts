@@ -4,8 +4,8 @@ import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 
 // import files
-import App from "../vue/App.vue";
-import Routes from "../vue/router/Routes";
+const App = () => import( "../vue/App.vue");
+const Routes = () => import("../vue/router/Routes");
 import "../vue/components/MyComponent";
 
 // create instance of vue "plugins"

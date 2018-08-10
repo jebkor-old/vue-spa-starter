@@ -1,0 +1,59 @@
+﻿{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": "./",
+        "paths": {
+            "@template.declarations*": [
+                "./wwwroot/ts/declarations*"
+            ],
+            "@template.models*": [
+                "./wwwroot/ts/model*"
+            ],
+            "@template.services*": [
+                "./wwwroot/ts/services*"
+            ],
+            "@template.types*": [
+                "./wwwroot/ts/types*"
+            ],
+            "@template.utilities*": [
+                "./wwwroot/ts/utilities*"
+            ],
+            "@template.vendor*": [
+                "./wwwroot/ts/vendor*"
+            ],
+            "@template.vue*": [
+                "./wwwroot/ts/vue*"
+            ]
+        },
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": false,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "target": "es2015",
+        "importHelpers": true,
+        "lib": [
+            "es5",
+            "es2015",
+            "es2016",
+            "dom"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "include": [
+        "./wwwroot/ts/**/*"
+    ],
+    "exclude": [
+        "./wwwroot/js/**/*"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useWebpackText": true,
+        "useTranspileModule": true,
+        "doTypeCheck": true,
+        "forkChecker": true
+    }
+}

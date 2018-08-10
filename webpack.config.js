@@ -4,7 +4,7 @@ const MiniExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
-  entry: ["./src/scss/all.scss", './src/js/index.js'],
+  entry: ["./src/scss/all.scss", './src/ts/index.ts'],
   module: {
     rules: [
       {
@@ -13,12 +13,18 @@ module.exports = {
         loader: 'babel-loader?cacheDirectory'
       },
       {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader'
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
             scss: 'style-loader!css-loader!sass-loader',
             js: 'babel-loader',
+            ts: "ts-loader",
             css: 'style-loader!css-loader'
           }
         }
@@ -49,7 +55,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.html', '.scss', '.css', '.js', '.vue'],
+    extensions: ['.html', '.scss', '.css', '.js', '.vue', '.ts'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       Vue$: 'vue/dist/vue.esm.js'
