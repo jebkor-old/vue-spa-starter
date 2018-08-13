@@ -2,23 +2,34 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
 import VueRouter from "vue-router";
-
-// import files
-const App = () => import( "../vue/App.vue");
-const Routes = () => import("../vue/router/Routes");
-import "../vue/components/MyComponent";
+import Vuex from "vuex";
 
 // create instance of vue "plugins"
+Vue.use(Vuex);
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 
+// import files
+import App from  "../vue/App.vue";
+import routes from "../vue/router/Routes";
+import "../vue/components/MyComponent";
+
+
+let store = new Vuex.Store({
+  state: {
+    count: 0
+  }
+});
+
+
 // add the routes to the application
 const router = new VueRouter({
-    routes: Routes
+    routes
 });
 
 // create SPA instance
-const app = new Vue({
+const VueApp = new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount("#app");

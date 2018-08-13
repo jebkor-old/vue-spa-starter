@@ -16,6 +16,10 @@
     <v-toolbar color="indigo" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <p>{{ $store.state.count }} pp</p>
     </v-toolbar>
 
     <v-content>
@@ -34,7 +38,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
   export default {
     data() {
       return {
