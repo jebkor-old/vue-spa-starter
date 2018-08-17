@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>Frontpage</h1>
+      
+        <h1>Frontpagge</h1>
         <p>{{ message }}</p>
 
         <my-component></my-component>

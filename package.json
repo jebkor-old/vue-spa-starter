@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-starter",
-  "version": "1.0.13",
+  "version": "1.0.26",
   "description": "",
   "main": "webpack.config.js",
   "browserslist": [
@@ -21,6 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.4",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-polyfill": "^6.26.0",
@@ -60,11 +61,14 @@
   "dependencies": {
     "tasukete": "^1.5.0",
     "typescript": "^3.0.1",
+    "vee-validate": "^2.1.0-beta.7",
     "vue": "^2.5.16",
     "vue-class-component": "^6.2.0",
+    "vue-notifyjs": "^0.4.3",
+    "vue-progressbar": "^0.7.5",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
-    "vuetify": "^1.1.1",
+    "vuetify": "^1.1.12",
     "vuex": "^3.0.1"
   }
 }

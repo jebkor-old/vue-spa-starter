@@ -25,10 +25,14 @@
     },
     methods: {
       increment() {
-        // do something
-
+        // Store the count in Vuex
         this.$store.state.count++;
 
+        // Display a toast about a success
+        this.$notify({
+          message: "The value has been incremented",
+          type: "success"
+        });
       }
     }
   });

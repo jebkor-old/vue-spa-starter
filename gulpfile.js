@@ -43,7 +43,7 @@ gulp.task("sw", () => {
   const pkg = require("./package.json");
   
   return gulp
-    .src("./src/ts/sw.ts")
+    .src("./src/js/sw.js")
     .pipe(replace('{%VERSION%}', pkg.version))
     .pipe(gulp.dest("./"));
 });
