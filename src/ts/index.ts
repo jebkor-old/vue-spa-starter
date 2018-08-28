@@ -28,7 +28,6 @@ Vue.use(VeeValidate);
 import App from  "../vue/App.vue";
 import routes from "../vue/router/Routes";
 import "../vue/components/MyComponent.vue";
-import "../vue/components/BlizzardLoader.vue";
 
 
 let store = new Vuex.Store({

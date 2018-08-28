@@ -13,7 +13,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar color="indigo" dark fixed app>
+    <v-toolbar color="indigo" dark fixed clipped-left app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
 
@@ -42,10 +42,14 @@
   export default {
     data() {
       return {
-        drawer: null,
+        drawer: false,
         message: "stuff",
         routes: this.$router.options.routes
       }
     },
   }
 </script>
+
+<style lang="scss">
+@import url("https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css");
+</style>
