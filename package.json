@@ -59,6 +59,10 @@
     "webpack-merge": "^4.1.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.3",
+    "@fortawesome/free-brands-svg-icons": "^5.3.0",
+    "@fortawesome/free-solid-svg-icons": "^5.3.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "tasukete": "^1.5.0",
     "typescript": "^3.0.1",
     "vee-validate": "^2.1.0-beta.7",
