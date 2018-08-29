@@ -22,7 +22,7 @@
             required
           ></v-text-field>
 
-          <v-text-field 
+          <v-text-field v-if="enableVisibilityIcon == false"
             v-model="password"
             v-validate="{required: true}"
             :error-messages="errors.collect('password')"
@@ -31,7 +31,21 @@
             name="password"
             outline 
             clearable 
-            append-icon="lock" 
+            append-icon="lock"
+            required
+          ></v-text-field>
+
+          <v-text-field v-else
+            v-model="password"
+            v-validate="{required: true}"
+            :error-messages="errors.collect('password')"
+            :type="showPassword ? 'text' : 'password'" 
+            label="Password" 
+            name="password"
+            outline 
+            clearable 
+            :append-icon="showPassword ? 'visibility_off' : 'visibility'"
+            @click:append="showPassword = !showPassword"
             required
           ></v-text-field>
 
@@ -40,7 +54,7 @@
             label="Remember me?"
           ></v-checkbox>
 
-          <v-btn type="submit" class="primary">Login ind</v-btn>
+          <v-btn type="submit" class="primary">Log ind</v-btn>
         </v-form>
       </v-flex>
     </v-layout>
@@ -71,18 +85,17 @@
         email: "",
         password: "",
         showPassword: false,
+        enableVisibilityIcon: false,
         rememberMe: false
       }
     },
     watch: {
       password(input) {
-        console.log("input: ", input);
-        if (input.length >= 5) {
-          this.showPassword = true;
-        } else if (input.length <= 5){
-          this.showPassword = false;
-        } else {
-          console.log("Something happened, the world exploded!");
+        console.log(input);
+        if ( input != null && input.length >= 1 ) {
+          this.enableVisibilityIcon = true;
+        } else  {
+          this.enableVisibilityIcon = false;
         }
       }
     }

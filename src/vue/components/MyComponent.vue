@@ -5,8 +5,8 @@
       <b>{{ $store.state.count }}</b> times.</p>
 
     <v-btn color="primary" @click.native="increment">+</v-btn>
-    <v-btn v-if="count >= 42" color="secondary" @click.native="count += 10"> FASTER!</v-btn>
-    <v-btn v-if="count >= 256" color="error" @click.native="count += 100"> FASTER!</v-btn>
+    <v-btn v-if="$store.state.count >= 42" color="secondary" @click.native="$store.state.count += 10"> FASTER!</v-btn>
+    <v-btn v-if="$store.state.count >= 256" color="error" @click.native="$store.state.count += 100"> FASTER!</v-btn>
     erger
 
   </div>

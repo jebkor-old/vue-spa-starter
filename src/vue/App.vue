@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed clipped app>
+    <v-navigation-drawer v-model="drawer" fixed clipped left app>
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
           <v-list-tile-action>
@@ -13,13 +13,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar color="indigo" dark fixed app>
+    <v-toolbar color="primary" dark fixed clipped-left app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <p>{{ $store.state.count }} pp</p>
     </v-toolbar>
 
     <v-content>
@@ -43,6 +39,7 @@
     data() {
       return {
         drawer: null,
+        drawerMobile: false,
         message: "stuff",
         routes: this.$router.options.routes
       }
