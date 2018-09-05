@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+  import { EventBus } from "../events/EventBus";
   import Feature from 'ol/Feature.js';
   import Map from 'ol/Map.js';
   import View from 'ol/View.js';
@@ -23,11 +24,12 @@
     clusterSource,
     clusters,
     markersArray = [],
-    iconFeature;
+    iconFeature,
+    map;
 
   // The Vue instance
   export default {
-    name: "ol-map",
+    name: "map",
     props: [
       "markers",
       "center",
@@ -36,8 +38,19 @@
       "zoom",
       "target"
     ],
+    data() {
+      return {
+        map: null
+      }
+    },
     mounted() {
+      let that = this;
       this.startMap();
+
+
+      EventBus.$on("getExtentRequest", request => {
+        that.getExtent();
+      });
     },
     methods: {
       startMap() {
@@ -52,7 +65,7 @@
         this.setupLayers();
 
         // define the map variable
-        let map = new Map({
+        map = new Map({
           layers: [raster, clusters],
           target: this.target,
           view: new View({
@@ -63,6 +76,7 @@
             projection: projection
           })
         });
+        this.map = map;
       },
       setupLayers() {
         // Loop over items in the array and add them to another array, for later use
@@ -150,6 +164,13 @@
             // Return the given style
             return style;
           }
+        });
+      },
+      getExtent() {
+        console.info("I will display the extent, everytime the map is dragged.");
+
+        map.on("moveend", function() {
+          console.log("Current Extent: ", map.getView().calculateExtent(map.getSize()));
         });
       }
     }
