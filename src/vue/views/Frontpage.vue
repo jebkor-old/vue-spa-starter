@@ -4,6 +4,9 @@
         <h1>Frontpagge</h1>
         <p>{{ message }}</p>
 
+        <span>Have a cup of coffee: <font-awesome-icon icon="cog"/></span>
+        <span>Something something Vue: <font-awesome-icon class="v-logo" :icon="['fab', 'vuejs']"/></span>
+
         <my-component></my-component>
     </div>  
 </template>

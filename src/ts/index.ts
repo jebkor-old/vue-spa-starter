@@ -6,6 +6,18 @@ import Vuex from "vuex";
 import Notify from "vue-notifyjs/dist/vue-notifyjs";
 import VueProgressBar from "vue-progressbar";
 import VeeValidate from "vee-validate";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCoffee, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+
+library.add(faCoffee, faCog, faVuejs);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+Vue.config.productionTip = false;
+
 
 // create instance of vue "plugins"
 Vue.use(Vuex);
