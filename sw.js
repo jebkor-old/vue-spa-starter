@@ -1,4 +1,4 @@
-const VERSION = '1.0.26::';
+const VERSION = '1.1.3::';
 
 var cacheFirstFiles = [
   // ADDME: Add paths and URLs to pull from cache first if it has been loaded before. Else fetch from network.
@@ -77,7 +77,7 @@ self.addEventListener('fetch', event => {
 // // Names of the two caches used in this version of the service worker.
 // // Change to v2, etc. when you update any of the local resources, which will
 // // in turn trigger the install event again.
-// const PRECACHE = '1.0.26::';
+// const PRECACHE = '1.1.3::';
 // const RUNTIME = 'runtime';
 
 // // A list of local resources we always want to be cached.
@@ -133,7 +133,7 @@ self.addEventListener('fetch', event => {
 
 // // console.log('WORKER: executing.');
 
-// // var version = '1.0.26::';
+// // var version = '1.1.3::';
 
 // // var offlineFundamentals = ['', 'dist/'];
 
