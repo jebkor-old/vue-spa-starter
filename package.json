@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-starter",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "",
   "main": "webpack.config.js",
   "browserslist": [
@@ -19,7 +19,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -30,7 +29,6 @@
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.0",
     "cypress": "^3.1.0",
-    "gremlins.js": "^0.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
@@ -62,21 +60,13 @@
     "webpack-merge": "^4.1.3"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@google/maps": "^0.5.5",
-    "google-maps": "^3.3.0",
-    "mapbox-gl": "^0.48.0",
     "moment": "^2.22.2",
     "ol": "^5.1.3",
-    "ol-mapbox-style": "^3.0.1",
-    "openlayers": "^4.6.5",
     "proj4": "^2.4.4",
-=======
     "@fortawesome/fontawesome-svg-core": "^1.2.3",
     "@fortawesome/free-brands-svg-icons": "^5.3.0",
     "@fortawesome/free-solid-svg-icons": "^5.3.0",
     "@fortawesome/vue-fontawesome": "^0.1.1",
->>>>>>> develop
     "tasukete": "^1.5.0",
     "typescript": "^3.0.1",
     "vee-validate": "^2.1.0-beta.7",
@@ -86,12 +76,7 @@
     "vue-progressbar": "^0.7.5",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
-<<<<<<< HEAD
-    "vue2-google-maps": "^0.10.2",
-    "vuetify": "^1.1.12",
-=======
     "vuetify": "^1.2.2",
->>>>>>> develop
     "vuex": "^3.0.1"
   }
 }

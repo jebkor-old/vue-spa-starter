@@ -12,14 +12,13 @@ import Notify from "vue-notifyjs/dist/vue-notifyjs";
 import VueProgressBar from "vue-progressbar";
 import VeeValidate from "vee-validate";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faCog, faFile } from "@fortawesome/free-solid-svg-icons";
-import { faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 
 
 // create instance of vue "plugins"
-library.add(faCoffee, faCog, faVuejs, faFile);
+library.add(faMapMarkedAlt);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
@@ -43,8 +42,6 @@ Vue.use(VueProgressBar, {
 // import files
 import App from  "../vue/App.vue";
 import routes from "../vue/router/Routes";
-import "../vue/components/MyComponent.vue";
-
 
 
 // Component registers

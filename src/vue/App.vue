@@ -14,11 +14,7 @@
       </v-list>
     </v-navigation-drawer>
 
-<<<<<<< HEAD
-    <v-toolbar color="indigo" dark fixed clipped-left app>
-=======
     <v-toolbar color="primary" dark fixed clipped-left app>
->>>>>>> develop
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-toolbar>
@@ -41,12 +37,8 @@
   export default {
     data() {
       return {
-<<<<<<< HEAD
-        drawer: false,
-=======
         drawer: null,
         drawerMobile: false,
->>>>>>> develop
         message: "stuff",
         routes: this.$router.options.routes
       }
