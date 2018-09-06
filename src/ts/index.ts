@@ -12,14 +12,14 @@ import Notify from "vue-notifyjs/dist/vue-notifyjs";
 import VueProgressBar from "vue-progressbar";
 import VeeValidate from "vee-validate";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCoffee, faCog, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 
 
 // create instance of vue "plugins"
-library.add(faCoffee, faCog, faVuejs);
+library.add(faCoffee, faCog, faVuejs, faFile);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VeeValidate);

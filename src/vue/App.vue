@@ -4,7 +4,8 @@
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
           <v-list-tile-action>
-            <v-icon>{{ link.icon }}</v-icon>
+            <v-icon v-if="link.iconType == 'material'">{{ link.icon }}</v-icon>
+            <font-awesome-icon v-else :icon="link.icon" class="fa-icon" />
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ link.name }}</v-list-tile-title>
@@ -19,14 +20,12 @@
     </v-toolbar>
 
     <v-content>
-      <v-container fluid fill-height>
+      <v-container fluid fill-height grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12>
-
             <transition name="fade">
               <router-view></router-view>
             </transition>
-
           </v-flex>
         </v-layout>
       </v-container>
