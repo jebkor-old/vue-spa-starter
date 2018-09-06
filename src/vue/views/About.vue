@@ -1,24 +1,26 @@
 <template>
-  <div>
-    <v-layout row wrap>
-      <v-flex xs12>
-        <h1>About page</h1>
-      </v-flex>
-    </v-layout>
+  <v-layout row wrap>
+    <v-flex xs12>
 
-    <v-layout row wrap>
-      <v-flex xs12 lg4>
-        <v-form>
-          <v-text-field v-model="email" v-validate="'email|required'" :error-messages="errors.collect('email')" type="email" name="email" label="E-mail" outline clearable append-icon="person" required></v-text-field>
+      <h1 class="display-3">About page</h1>
 
-          <v-text-field v-model="password" v-validate="{required: true}" :error-messages="errors.collect('password')" :type="showPassword ? 'text' : 'password'" label="Password" name="password" outline clearable append-icon="lock" required></v-text-field>
+      <v-layout row wrap>
+        <v-flex xs12 lg4>
+          <v-form>
+            <v-text-field v-model="email" v-validate="'email|required'" :error-messages="errors.collect('email')" type="email" name="email" label="E-mail" outline clearable append-icon="person" required></v-text-field>
 
-          <v-checkbox v-model="rememberMe" label="Remember me?"></v-checkbox>
+            <v-text-field v-if="enableVisibilityIcon == false" v-model="password" v-validate="{required: true}" :error-messages="errors.collect('password')" :type="showPassword ? 'text' : 'password'" label="Password" name="password" outline clearable append-icon="lock" required></v-text-field>
 
-          <v-btn type="submit" class="primary">Login ind</v-btn>
-        </v-form>
-      </v-flex>
-    </v-layout>
+            <v-text-field v-else v-model="password" v-validate="{required: true}" :error-messages="errors.collect('password')" :type="showPassword ? 'text' : 'password'" label="Password" name="password" outline clearable :append-icon="showPassword ? 'visibility_off' : 'visibility'" @click:append="showPassword = !showPassword" required></v-text-field>
+
+            <v-checkbox v-model="rememberMe" label="Remember me?"></v-checkbox>
+
+            <v-btn type="submit" class="primary">Log ind</v-btn>
+          </v-form>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+  </v-layout>
 
     <v-layout row wrap>
       <v-flex xs12>
@@ -118,6 +120,8 @@
           lat: 12.514241,
           text: "Frederiksberg"
         }]
+        enableVisibilityIcon: false,
+        rememberMe: false
       }
     },
     mounted() {
@@ -125,12 +129,11 @@
     },
     watch: {
       password(input) {
-        if (input.length >= 5) {
-          this.showPassword = true;
-        } else if (input.length <= 5) {
-          this.showPassword = false;
+        console.log(input);
+        if (input != null && input.length >= 1) {
+          this.enableVisibilityIcon = true;
         } else {
-          console.log("Something happened, the world exploded!");
+          this.enableVisibilityIcon = false;
         }
       }
     }

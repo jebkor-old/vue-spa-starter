@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-starter",
-  "version": "1.0.26",
+  "version": "1.1.3",
   "description": "",
   "main": "webpack.config.js",
   "browserslist": [
@@ -19,10 +19,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
@@ -31,7 +32,7 @@
     "cypress": "^3.1.0",
     "gremlins.js": "^0.1.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-replace": "^1.0.0",
@@ -47,9 +48,9 @@
     "postcss-loader": "^3.0.0",
     "precss": "^3.1.2",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.22.1",
+    "style-loader": "^0.23.0",
     "sugarss": "^2.0.0",
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^5.0.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.0.1",
     "vue-loader": "^15.2.4",
@@ -85,8 +86,12 @@
     "vue-progressbar": "^0.7.5",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
+<<<<<<< HEAD
     "vue2-google-maps": "^0.10.2",
     "vuetify": "^1.1.12",
+=======
+    "vuetify": "^1.2.2",
+>>>>>>> develop
     "vuex": "^3.0.1"
   }
 }

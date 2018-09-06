@@ -1,10 +1,11 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed clipped app>
+    <v-navigation-drawer v-model="drawer" fixed clipped left app>
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
           <v-list-tile-action>
-            <v-icon>{{ link.icon }}</v-icon>
+            <v-icon v-if="link.iconType == 'material'">{{ link.icon }}</v-icon>
+            <font-awesome-icon v-else :icon="link.icon" class="fa-icon" />
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ link.name }}</v-list-tile-title>
@@ -13,24 +14,22 @@
       </v-list>
     </v-navigation-drawer>
 
+<<<<<<< HEAD
     <v-toolbar color="indigo" dark fixed clipped-left app>
+=======
+    <v-toolbar color="primary" dark fixed clipped-left app>
+>>>>>>> develop
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <p>{{ $store.state.count }} pp</p>
     </v-toolbar>
 
     <v-content>
-      <v-container fluid fill-height>
+      <v-container fluid fill-height grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12>
-
             <transition name="fade">
               <router-view></router-view>
             </transition>
-
           </v-flex>
         </v-layout>
       </v-container>
@@ -42,7 +41,12 @@
   export default {
     data() {
       return {
+<<<<<<< HEAD
         drawer: false,
+=======
+        drawer: null,
+        drawerMobile: false,
+>>>>>>> develop
         message: "stuff",
         routes: this.$router.options.routes
       }

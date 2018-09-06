@@ -1,3 +1,8 @@
+// Disable the production warning in the console
+Vue.config.productionTip = false;
+
+
+
 // import dependencies
 import Vue from "vue";
 import Vuetify from "vuetify";
@@ -7,22 +12,20 @@ import Notify from "vue-notifyjs/dist/vue-notifyjs";
 import VueProgressBar from "vue-progressbar";
 import VeeValidate from "vee-validate";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCoffee, faCog, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 
-library.add(faCoffee, faCog, faVuejs);
-
-Vue.component("font-awesome-icon", FontAwesomeIcon);
-
-Vue.config.productionTip = false;
-
 
 // create instance of vue "plugins"
+library.add(faCoffee, faCog, faVuejs, faFile);
 Vue.use(Vuex);
-Vue.use(Vuetify);
 Vue.use(VueRouter);
+Vue.use(VeeValidate);
+Vue.use(Vuetify, {
+  theme: { }
+});
 Vue.use(Notify, {
   type: "primary",
   timeout: 5000,
@@ -34,7 +37,8 @@ Vue.use(VueProgressBar, {
   failedColor: 'red',
   height: '2px'
 });
-Vue.use(VeeValidate);
+
+
 
 // import files
 import App from  "../vue/App.vue";
@@ -42,6 +46,13 @@ import routes from "../vue/router/Routes";
 import "../vue/components/MyComponent.vue";
 
 
+
+// Component registers
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+
+
+// Vuex store register
 let store = new Vuex.Store({
   state: {
     count: 0
@@ -49,10 +60,13 @@ let store = new Vuex.Store({
 });
 
 
+
 // add the routes to the application
 const router = new VueRouter({
     routes
 });
+
+
 
 // create SPA instance
 const VueApp = new Vue({
