@@ -2,7 +2,6 @@
 Vue.config.productionTip = false;
 
 
-
 // import dependencies
 import Vue from "vue";
 import Vuetify from "vuetify";
@@ -11,7 +10,6 @@ import Vuex from "vuex";
 import Notify from "vue-notifyjs/dist/vue-notifyjs";
 import VueProgressBar from "vue-progressbar";
 import VeeValidate from "vee-validate";
-import VueLayers from "vuelayers";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -21,7 +19,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // create instance of vue "plugins"
 library.add(faMapMarkedAlt);
 Vue.use(Vuex);
-Vue.use(VueLayers);
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
 Vue.use(Vuetify, {

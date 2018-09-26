@@ -1,120 +1,58 @@
 <template>
   <div>
-
+    <div id="map"></div>
   </div>
 </template>
 
-<script>
-  import ol from "openlayers";
+<script lang="ts">
+  import * as L from "leaflet";
+  import "leaflet.markercluster";
 
   export default {
+    name: "ol-map",
     props: {
+      lng: {
+        required: true,
+        type: Number
+      },
       lat: {
         required: true,
         type: Number
       },
-
-      lon: {
-        required: true,
-        type: Number
-      },
-
-      zoom: {
-        required: false,
-        type: Number,
-        default: 4
-      },
-
       markers: {
         required: false,
-        type: Array,
-        default() {
-          return []
-        }
+        type: Array
       }
     },
-
-    data() {
-      return {
-        map: {
-          type: Object,
-          default: {}
-        },
-      }
-    },
-
-    computed: {
-      id() {
-        return this.$options.name + "-" + this._uid
-      }
-    },
-
     mounted() {
-      let mapConfig = {
-        target: this.id,
+      // Initialize the leaflet map
+      let mymap = L.map("map").setView([55.4228413, 10.0381507], 7);
 
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
+      // Add a map layer to the map
+      L.tileLayer('https://maps.tilehosting.com/styles/basic/{z}/{x}/{y}.png?key={accessToken}', {
+        maxZoom: 18,
+        id: 'basic',
+        accessToken: 'osrA0K8XG43k46i7hDSG'
+      }).addTo(mymap);
 
-        view: new ol.View({
-          center: ol.proj.fromLonLat([this.lon, this.lat]),
-          zoom: this.zoom
-        })
-      };
+      // Initialization of cluster group
+      let markers = L.markerClusterGroup().addTo(mymap);
 
-      if (this.markers.length > 0) {
-        let markerLayer
-        let markerSource = new ol.source.Vector()
-
-        this.markers.forEach((marker) => {
-          let featureProperties = {
-            geometry: new ol.geom.Point(
-              ol.proj.transform([marker.lon, marker.lat], "EPSG:4326", "EPSG:3857")
-            )
-          }
-
-          let feature = new ol.Feature({
-            geometry: featureProperties
-          })
-
-          markerSource.addFeature(feature)
-        });
-
-        let iconStyle = new ol.style.Style({
-          image: new ol.style.Icon({
-            anchor: [0.5, 46],
-            anchorXUnits: 'fraction',
-            anchorYUnits: 'pixels',
-            opacity: 0.75,
-            src: 'http://openlayers.org/en/v3.9.0/examples/data/icon.png'
-          })
-        })
-
-        markerLayer = new ol.layer.Vector({
-          source: markerSource,
-          style: iconStyle
-        });
-
-        mapConfig.layers.push(markerLayer)
+      // Loop and add a marker to the cluster
+      for (let i = 0; i < this.markers.length; i++) {
+        const marker = this.markers[i];
+        L.marker([marker.lng, marker.lat]).addTo(markers);
       }
-
-      let map = new ol.Map(mapConfig);
-      this.map = map;
-
-
-      map.on("click", function (evt) {
-        let feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
-          return feature;
-        });
-
-        console.log("feature: ", feature);
-      })
     }
   }
 </script>
 
-<style scoped>
+
+
+<style lang="scss" scoped>
+// Set a height for the map
+#map {
+  height: calc(100vh - 115px);
+}
 </style>
+

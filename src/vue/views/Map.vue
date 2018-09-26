@@ -1,7 +1,8 @@
 <template>
   <v-layout row wrap>
     <v-flex xs12>
-      <ol-map :lat="map.lat" :lon="map.lon" :markers="markers" />
+      <ol-map :lat="map.lat" :lng="map.lon" :markers="markers" />
+      <div ref="map" id="map" class="map"></div>
     </v-flex>
   </v-layout>
 
