@@ -1,7 +1,7 @@
 <template>
   <v-layout row wrap>
     <v-flex xs12>
-      <v-card class="pa-4">
+      <v-card class="pa-4 custom-elevation">
         <h1 class="display-3">Frontpage</h1>
         <p>{{ message }}</p>
 
