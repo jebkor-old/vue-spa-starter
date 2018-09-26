@@ -34,14 +34,16 @@
 </template>
 
 <script lang="ts">
+  import NProgress from "nprogress";
+
   export default {
     data() {
       return {
-        drawer: null,
+        drawer: false,
         drawerMobile: false,
         message: "stuff",
         routes: this.$router.options.routes
       }
-    },
+    }
   }
 </script>

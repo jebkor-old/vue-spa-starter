@@ -1,36 +1,41 @@
 // Disable the production warning in the console
 Vue.config.productionTip = false;
 
-
-
 // import dependencies
-import Vue from "vue";
-import Vuetify from "vuetify";
-import VueRouter from "vue-router";
-import Vuex from "vuex";
-import Notify from "vue-notifyjs/dist/vue-notifyjs";
-import VueProgressBar from "vue-progressbar";
-import VeeValidate from "vee-validate";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faCog, faFile } from "@fortawesome/free-solid-svg-icons";
-import { faVuejs } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
-
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import VueRouter from 'vue-router';
+import Vuex from 'vuex';
+import Notify from 'vue-notifyjs/dist/vue-notifyjs';
+import VueProgressBar from 'vue-progressbar';
+import VeeValidate from 'vee-validate';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee, faCog, faFile } from '@fortawesome/free-solid-svg-icons';
+import { faVuejs } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 // create instance of vue "plugins"
 library.add(faCoffee, faCog, faVuejs, faFile);
-Vue.use(Vuex);
 Vue.use(VueRouter);
+// Vue.use(Vuex) happens in the "Store.ts" file instead
 Vue.use(VeeValidate);
 Vue.use(Vuetify, {
-  theme: { }
+  theme: {
+    primary: '#1976D2',
+    secondary: '#424242',
+    accent: '#82B1FF',
+    error: '#FF5252',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FFC107',
+    userdefined: "#ff00ff"
+  }
 });
 Vue.use(Notify, {
-  type: "primary",
+  type: 'primary',
   timeout: 5000,
-  horizontalAlign: "right",
-  verticalAlign: "bottom"
+  horizontalAlign: 'right',
+  verticalAlign: 'bottom'
 });
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
@@ -38,39 +43,18 @@ Vue.use(VueProgressBar, {
   height: '2px'
 });
 
-
-
 // import files
-import App from  "../vue/App.vue";
-import routes from "../vue/router/Routes";
-import "../vue/components/MyComponent.vue";
-
-
+import App from '../vue/App.vue';
+import router from '../vue/router/Routes';
+import store from "../vue/store/Store";
+import '../vue/components/MyComponent.vue';
 
 // Component registers
-Vue.component("font-awesome-icon", FontAwesomeIcon);
-
-
-
-// Vuex store register
-let store = new Vuex.Store({
-  state: {
-    count: 0
-  }
-});
-
-
-
-// add the routes to the application
-const router = new VueRouter({
-    routes
-});
-
-
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // create SPA instance
 const VueApp = new Vue({
-    router,
-    store,
-    render: h => h(App)
-}).$mount("#app");
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app');
