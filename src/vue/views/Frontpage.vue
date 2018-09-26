@@ -1,17 +1,28 @@
 <template>
   <v-layout row wrap>
     <v-flex xs12>
-      <h1 class="display-3">Frontpagge</h1>
-    <p>{{ message }}</p>
+      <v-card class="pa-4">
+        <h1 class="display-3">Frontpage</h1>
+        <p>{{ message }}</p>
 
-    <span>Have a cup of coffee:
-      <font-awesome-icon icon="cog" />
-    </span>
-    <span>Something something Vue:
-      <font-awesome-icon class="v-logo" :icon="['fab', 'vuejs']" />
-    </span>
+        <v-layout row wrap>
+          <v-flex xs12>
+            <span>Have a cup of coffee:
+              <font-awesome-icon icon="cog" />
+            </span>
+          </v-flex>
+        </v-layout>
 
-    <my-component></my-component>
+        <v-layout row wrap>
+          <v-flex xs12>
+            <span>Something something Vue:
+              <font-awesome-icon class="v-logo" :icon="['fab', 'vuejs']" />
+            </span>
+          </v-flex>
+        </v-layout>
+
+        <my-component></my-component>
+      </v-card>
     </v-flex>
   </v-layout>
 </template>
