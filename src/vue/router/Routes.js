@@ -3,7 +3,6 @@ import NProgress from "nprogress";
 
 // Import the .vue files, the router views.
 import Frontpage from '../views/Frontpage.vue';
-import Cards from '../views/Cards.vue';
 
 // Initialize and setup the routes
 const Routes = new Router({
@@ -14,13 +13,6 @@ const Routes = new Router({
       component: Frontpage,
       iconType: 'material',
       icon: 'home'
-    },
-    {
-      path: '/cards',
-      name: 'Cards Page',
-      component: Cards,
-      iconType: 'fa',
-      icon: 'file'
     }
   ]
 });
