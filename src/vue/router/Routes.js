@@ -3,7 +3,6 @@ import NProgress from "nprogress";
 
 // Import the .vue files, the router views.
 import Frontpage from '../views/Frontpage.vue';
-import About from '../views/About.vue';
 import Cards from '../views/Cards.vue';
 
 // Initialize and setup the routes
@@ -15,13 +14,6 @@ const Routes = new Router({
       component: Frontpage,
       iconType: 'material',
       icon: 'home'
-    },
-    {
-      path: '/about',
-      name: 'About Page',
-      component: About,
-      iconType: 'material',
-      icon: 'person'
     },
     {
       path: '/cards',
