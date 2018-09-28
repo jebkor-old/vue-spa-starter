@@ -1,0 +1,54 @@
+﻿{
+  "compileOnSave": false,
+  "compilerOptions": {
+      "experimentalDecorators": true,
+      "baseUrl": "./",
+      "paths": {
+          "@ec.declarations*": [
+              "./src/ts/declarations*"
+          ],
+          "@ec.models*": [
+              "./src/ts/model*"
+          ],
+          "@ec.services*": [
+              "./src/ts/services*"
+          ],
+          "@ec.types*": [
+              "./src/ts/types*"
+          ],
+          "@ec.utilities*": [
+              "./src/ts/utilities*"
+          ],
+          "@ec.vendor*": [
+              "./src/ts/vendor*"
+          ],
+          "@ec.vue*": [
+              "./src/ts/vue*"
+          ]
+      },
+      "allowJs": true,
+      "sourceMap": true,
+      "strict": false,
+      "module": "es2015",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "target": "es2015",
+      "importHelpers": true,
+      "lib": [
+          "es5",
+          "es2015",
+          "es2016",
+          "dom"
+      ],
+      "typeRoots": [
+          "node_modules/@types"
+      ]
+  },
+  "include": [
+      "./src/ts/**/*",
+      "./src/vue/**/*"
+  ],
+  "exclude": [
+      "./src/js/**/*"
+  ]
+}

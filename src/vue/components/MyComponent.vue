@@ -1,41 +1,50 @@
 <template>
-    <div>
-        <h2>I am a counter!</h2>
-        <p>You have clicked the button: <b>{{ count }}</b> times.</p>
+  <div>
+    <h2>I am a counterr!</h2>
+    <p>You have clicked the button, this many timess:
+      <b>{{ $store.state.count }}</b> times.</p>
 
-        <v-btn color="primary" @click.native="increment">+</v-btn>
-        <v-btn v-if="count >= 42" color="secondary" @click.native="count += 10"> FASTER!</v-btn>
-        <v-btn v-if="count >= 256" color="error" @click.native="count += 100"> FASTER!</v-btn>
+    <v-btn color="primary" @click.native="increment">+</v-btn>
+    <v-btn v-if="$store.state.count >= 42" color="secondary" @click.native="$store.state.count += 10"> FASTER!</v-btn>
+    <v-btn v-if="$store.state.count >= 256" color="error" @click.native="$store.state.count += 100"> FASTER!</v-btn>
+    erger
 
-
-    </div>
+  </div>
 </template>
 
-<script>
-    import Vue from "vue";
+<script lang="ts">
+  import Vue from "vue";
 
-    export default Vue.component("my-component", {
-        name: "my-component",
-        data() {
-            return {
-                count: 0
-            }
-        },
-        methods: {
-            increment() {
-                this.count++;
-            }
-        }
-    });
+
+  export default Vue.component("my-component", {
+    name: "my-component",
+    data() {
+      return {
+        count: 0
+      }
+    },
+    methods: {
+      increment() {
+        // Store the count in Vuex
+        this.$store.state.count++;
+
+        // Display a toast about a success
+        this.$notify({
+          message: "The value has been incremented",
+          type: "success"
+        });
+      }
+    }
+  });
 </script>
 
 
 <style lang="scss" scoped>
 div {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 b {
-    font-size: 22px;
+  font-size: 22px;
 }
 </style>
