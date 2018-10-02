@@ -22,6 +22,13 @@
         </v-layout>
 
         <my-component></my-component>
+
+        <br>
+        <br>
+        <br>
+
+
+        <group-comp/>
       </v-card>
     </v-flex>
   </v-layout>
@@ -29,7 +36,12 @@
 
 <script lang="ts">
   import LoadingService from "../../ts/services/LoadingService";
+  import GroupComp from "../../vue/components/Group.vue";
+
   export default {
+    components: {
+      GroupComp
+    },
     data() {
       return {
         message: "I am the frontpage. Commodo esse ipsum adipisicing quis exercitation ea proident exercitation ullamco laborum dolor. Voluptate id eiusmod labore culpa ex culpa nisi nostrud consectetur cupidatat. Tempor non do eiusmod quis est velit. Et in velit consectetur voluptate. Dolore Lorem culpa deserunt nostrud ipsum consectetur velit commodo occaecat dolore excepteur. Reprehenderit est sint ut minim commodo enim aute veniam consectetur excepteur duis."

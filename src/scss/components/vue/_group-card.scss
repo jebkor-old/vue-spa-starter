@@ -1,0 +1,23 @@
+.group-card {
+  border-radius: 6px;
+  border-top: 3px solid blue;
+  border-bottom: 3px solid blue;
+  padding: 15px;
+  position: relative;
+
+  &__chips {
+    
+  }
+
+  &__menu {
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    
+    .v-btn {
+      width: 25px;
+      float: right;
+    }
+  }
+}
