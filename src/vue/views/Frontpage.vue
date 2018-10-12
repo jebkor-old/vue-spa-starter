@@ -22,6 +22,8 @@
         </v-layout>
 
         <my-component></my-component>
+
+        <v-text-field v-validate="'email|required'" data-vv-name="email" :error-messages="errors.collect('email')"></v-text-field>
       </v-card>
     </v-flex>
   </v-layout>

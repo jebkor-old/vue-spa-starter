@@ -3,6 +3,8 @@ const path = require('path');
 const MiniExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 
+const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
+
 module.exports = {
   entry: [
     "./src/scss/all.scss",
@@ -20,6 +22,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'ts-loader',
         options: {
+          transpileOnly: true,
+          happyPackMode: true,
           appendTsSuffixTo: [/\.vue$/]
         }
       },
@@ -71,7 +75,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new MiniExtractPlugin({
       filename: "styles/[name].css"
-    })
+    }),
+    new ForkTsCheckerPlugin(),
   ],
   optimization: {
     splitChunks: {

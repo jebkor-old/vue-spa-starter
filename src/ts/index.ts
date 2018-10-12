@@ -5,7 +5,6 @@ Vue.config.productionTip = false;
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import VueRouter from 'vue-router';
-import Vuex from 'vuex';
 import Notify from 'vue-notifyjs/dist/vue-notifyjs';
 import VueProgressBar from 'vue-progressbar';
 import VeeValidate from 'vee-validate';
@@ -17,7 +16,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 // create instance of vue "plugins"
 library.add(faCoffee, faCog, faVuejs, faFile);
 Vue.use(VueRouter);
-// Vue.use(Vuex) happens in the "Store.ts" file instead
 Vue.use(VeeValidate);
 Vue.use(Vuetify, {
   theme: {
