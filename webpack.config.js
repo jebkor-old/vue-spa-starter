@@ -6,10 +6,9 @@ const { VueLoaderPlugin } = require("vue-loader");
 const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-  entry: [
-    "./src/scss/all.scss",
-    './src/ts/index.ts'
-  ],
+  entry: {
+    "main": ['./src/ts/styles.ts', './src/ts/index.ts']
+  },
   module: {
     rules: [
       {
@@ -32,7 +31,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            scss: 'style-loader!css-loader!sass-loader',
+            scss: 'style-loader!css-loader!postcss-loader!sass-loader',
             js: 'babel-loader',
             ts: "ts-loader",
             css: 'style-loader!css-loader'
@@ -55,6 +54,7 @@ module.exports = {
         ],
       }, {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
+        exclude: /node_modules/,
         use: [{
           loader: "url-loader",
           options: {

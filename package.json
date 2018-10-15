@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-starter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "webpack.config.js",
   "browserslist": [
@@ -9,9 +9,10 @@
     "< 5%"
   ],
   "scripts": {
+    "analyze": "webpack --progress --config webpack.test.config.js --mode production",
     "start": "webpack --config webpack.dev.config.js --mode development --watch",
     "build": "run-s patch webpack-build && gulp",
-    "webpack-build": "webpack --config webpack.prod.config.js",
+    "webpack-build": "webpack -p --config webpack.prod.config.js --mode production",
     "patch": "npm version patch",
     "css-vendor": "gulp vendor"
   },
@@ -58,6 +59,7 @@
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^3.1.2",
     "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.9",

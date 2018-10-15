@@ -9,9 +9,7 @@
 </head>
 
 <body>
-
   <div id="app"></div>
-
 
 
   <noscript id="deferred-styles">
@@ -37,7 +35,7 @@
   <script src="./dist/main.js"></script>
 
   <script>
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator && settings.useServiceWorker) {
       console.log('CLIENT: service worker registration in progress.');
       navigator.serviceWorker.register('sw.js').then(function () {
         console.log('CLIENT: service worker registration complete.');
