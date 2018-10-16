@@ -9,10 +9,10 @@
     "< 5%"
   ],
   "scripts": {
-    "analyze": "webpack --progress --config webpack.test.config.js --mode production",
-    "start": "webpack --config webpack.dev.config.js --mode development --watch",
+    "analyze": "webpack --progress --config webpack.test.config.js",
+    "start": "webpack --config webpack.dev.config.js --watch",
     "build": "run-s patch webpack-build && gulp",
-    "webpack-build": "webpack -p --config webpack.prod.config.js --mode production",
+    "webpack-build": "webpack --progress --config webpack.prod.config.js",
     "patch": "npm version patch",
     "css-vendor": "gulp vendor"
   },
@@ -53,6 +53,7 @@
     "sass-loader": "^7.0.3",
     "style-loader": "^0.23.0",
     "sugarss": "^2.0.0",
+    "terser-webpack-plugin": "^1.1.0",
     "ts-loader": "^5.0.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.0.1",

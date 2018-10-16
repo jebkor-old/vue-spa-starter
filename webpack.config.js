@@ -1,13 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniExtractPlugin = require('mini-css-extract-plugin');
-const { VueLoaderPlugin } = require("vue-loader");
+const { VueLoaderPlugin } = require('vue-loader');
 
-const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
-    "main": ['./src/ts/styles.ts', './src/ts/index.ts']
+    main: ['./src/ts/index.ts']
   },
   module: {
     rules: [
@@ -18,7 +18,6 @@ module.exports = {
       },
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
         loader: 'ts-loader',
         options: {
           transpileOnly: true,
@@ -31,9 +30,10 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            scss: 'style-loader!css-loader!postcss-loader!sass-loader',
+            scss:
+              'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!postcss-loader!sass-loader',
             js: 'babel-loader',
-            ts: "ts-loader",
+            ts: 'ts-loader',
             css: 'style-loader!css-loader'
           }
         }
@@ -41,26 +41,30 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              minimize: true
             }
           },
-          "postcss-loader",
-          "sass-loader"
-        ],
-      }, {
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         exclude: /node_modules/,
-        use: [{
-          loader: "url-loader",
-          options: {
-            limit: 8192
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
           }
-        }]
+        ]
       }
     ]
   },
@@ -74,9 +78,9 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniExtractPlugin({
-      filename: "styles/[name].css"
+      filename: 'styles/[name].css'
     }),
-    new ForkTsCheckerPlugin(),
+    new ForkTsCheckerPlugin()
   ],
   optimization: {
     splitChunks: {

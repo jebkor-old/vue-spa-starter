@@ -4,8 +4,8 @@
  */
 
 // Vendor
-import "vuetify/dist/vuetify.css";
-import "nprogress/nprogress.css";
+// import "vuetify/dist/vuetify.css";
+// import "nprogress/nprogress.css";
 
-// Custom
-import "../scss/all.scss";
+// // Custom
+// import "../scss/all.scss";
