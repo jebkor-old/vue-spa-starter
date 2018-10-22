@@ -17,8 +17,6 @@ import { faVuejs } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 
-
-
 // create instance of vue "plugins"
 library.add(faCoffee, faCog, faVuejs, faFile);
 
