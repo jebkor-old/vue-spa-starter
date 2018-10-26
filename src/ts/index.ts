@@ -25,7 +25,6 @@ Vue.use(VueRouter);
 
 Vue.use(VeeValidate);
 
-
 Vue.use(Vuetify, {
   theme: {
     primary: '#1976D2',
