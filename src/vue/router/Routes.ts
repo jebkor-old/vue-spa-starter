@@ -11,8 +11,10 @@ const Routes = new Router({
       path: '/',
       name: 'Frontpage',
       component: Frontpage,
-      iconType: 'material',
-      icon: 'home'
+      meta: {
+        iconType: 'material',
+        icon: 'home'
+      },
     }
   ]
 });

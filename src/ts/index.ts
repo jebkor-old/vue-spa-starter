@@ -1,6 +1,7 @@
 Vue.config.productionTip = false;
 
-
+import '../scss/all.scss';
+import 'vuetify/dist/vuetify.css';
 
 
 // import dependencies
