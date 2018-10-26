@@ -1,0 +1,88 @@
+/*
+* Override the default theme for toastr, to give it a vuetify feel instead
+*/
+
+#toast-container {
+  font-family: Roboto, sans-serif;
+
+  @include screen("phone") {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  @include screen("tablet") {
+    max-width: 400px;
+    width: 100%;
+  }
+
+
+  &.toast-bottom-right {
+    bottom: 60px;
+    right: 30px;
+
+    @include screen("phone") {
+      right: 24px;
+    }
+  }
+
+
+
+  > .toast {
+    position: relative;
+    box-shadow: none; // reset the box-shadow to add it ourself later
+    opacity: 1;
+    
+    @extend .box-shadow !optional; // add the vuetify box-shadow
+    
+    background-color: #323232;
+    background-size: 0; // change the size of the icon
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 20px;
+    padding-right: 75px;
+    width: 100%;
+
+    &.toast-success {
+      background-color: getColor($stuff, success, base, true);
+    }
+
+    &.toast-error {
+      background-color: getColor($stuff, error, base, true);
+    }
+
+    &.toast-warning {
+      background-color: getColor($stuff, warning, base, true);
+    }
+
+    &.toast-info {
+      background-color: getColor($stuff, info, base, true);
+    }
+
+
+
+    > .toast-close-button {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      font-weight: normal;
+      transform: translateY(-50%);
+      color: #fff;
+      text-shadow: none;
+      font-family: Roboto, sans-serif;
+      font-size: 17px;
+      text-transform: capitalize;
+
+      &:hover {
+        color: darken(#fff, 5%);
+        opacity: 1;
+      }
+    }
+
+
+
+    > .toast-message {
+      border-radius: 2px;
+    }
+    
+  }
+}

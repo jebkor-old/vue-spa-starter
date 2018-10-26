@@ -31,7 +31,7 @@ module.exports = {
         options: {
           loaders: {
             scss:
-              'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!postcss-loader!sass-loader',
+              'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!sass-loader',
             js: 'babel-loader',
             ts: 'ts-loader',
             css: 'style-loader!css-loader'
@@ -50,7 +50,6 @@ module.exports = {
               minimize: true
             }
           },
-          'postcss-loader',
           'sass-loader'
         ]
       },
@@ -72,7 +71,15 @@ module.exports = {
     extensions: ['.html', '.scss', '.css', '.js', '.vue', '.ts'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      Vue$: 'vue/dist/vue.esm.js'
+      Vue$: 'vue/dist/vue.esm.js',
+      "@root": path.resolve("./src"),
+      "@declarations": path.resolve("./src/ts/declarations"),
+      "@models": path.resolve("./src/ts/model"),
+      "@services": path.resolve("./src/ts/services"),
+      "@types": path.resolve("./src/ts/types"),
+      "@utilities": path.resolve("./src/ts/utilities"),
+      "@vendor": path.resolve("./src/ts/vendor"),
+      "@vue": path.resolve("./src/ts/vue")
     }
   },
   plugins: [
