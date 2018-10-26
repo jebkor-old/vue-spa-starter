@@ -10,7 +10,6 @@ import VueRouter from 'vue-router';
 import Notify from 'vue-notifyjs/dist/vue-notifyjs';
 import VueProgressBar from 'vue-progressbar';
 import VeeValidate from 'vee-validate';
-import VueApexCharts from "vue-apexcharts";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog, faFile } from '@fortawesome/free-solid-svg-icons';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
@@ -25,8 +24,6 @@ library.add(faCoffee, faCog, faVuejs, faFile);
 Vue.use(VueRouter);
 
 Vue.use(VeeValidate);
-
-Vue.use(VueApexCharts);
 
 Vue.use(Vuetify, {
   theme: {
