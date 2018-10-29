@@ -1,0 +1,29 @@
+.grid-container {
+  .user-profile {
+    display: grid;
+    grid-template-areas:
+      'avatar'
+      'name'
+      'bio';
+    max-width: 400px;
+
+    &__username {
+      grid-area: name;
+    }
+
+    &__avatar {
+      grid-area: avatar;
+    }
+
+    &__bio {
+      grid-area: bio;
+    }
+
+    @include screen(map-get($bps, xs ), max) {
+      grid-template-areas: 
+        "name"
+        "avatar"
+        "bio";
+    }
+  }
+}

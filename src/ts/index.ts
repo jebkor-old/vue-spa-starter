@@ -1,10 +1,16 @@
 Vue.config.productionTip = false;
 
-import '../scss/all.scss';
+
+
+// css vendor libraries
 import 'vuetify/dist/vuetify.css';
+// custom css
+import '../scss/all.scss';
+
 
 
 // import dependencies
+import "@babel/polyfill";
 import Vue from "vue";
 import Vuetify from 'vuetify';
 import VueRouter from 'vue-router';
@@ -27,11 +33,8 @@ library.add(
   faFile, 
   faVuejs
 );
-
 Vue.use(VueRouter);
-
 Vue.use(VeeValidate);
-
 Vue.use(Vuetify, {
   theme: {
     primary: '#1976D2',
@@ -44,14 +47,12 @@ Vue.use(Vuetify, {
     userdefined: "#ff00ff"
   }
 });
-
 Vue.use(Notify, {
   type: 'primary',
   timeout: 5000,
   horizontalAlign: 'right',
   verticalAlign: 'bottom'
 });
-
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
   failedColor: 'red',

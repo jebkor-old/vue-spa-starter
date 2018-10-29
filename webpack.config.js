@@ -2,8 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
-
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+
+const loaders = require('./loaders'); // Seperate file with all of the loaders
+
 
 module.exports = {
   entry: {
@@ -11,61 +13,11 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader?cacheDirectory'
-      },
-      {
-        test: /\.ts$/,
-        loader: 'ts-loader',
-        options: {
-          transpileOnly: true,
-          happyPackMode: true,
-          appendTsSuffixTo: [/\.vue$/]
-        }
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss:
-              'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!postcss-loader!sass-loader',
-            js: 'babel-loader',
-            ts: 'ts-loader',
-            css: 'style-loader!css-loader'
-          }
-        }
-      },
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          'style-loader',
-          MiniExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              minimize: true
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
-          }
-        ]
-      }
+      loaders.FileLoader,
+      loaders.CssLoader,
+      loaders.JSLoader,
+      loaders.TSLoader,
+      loaders.VueLoader
     ]
   },
   resolve: {

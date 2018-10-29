@@ -1,8 +1,9 @@
-module.exports = ({ file, options, env }) => ({
-  parser: file.extname === '.sss' ? 'sugarss' : false,
+module.exports = {
   plugins: {
-    "precss": {},
-    "autoprefixer": {},
-    "cssnano": {}
-  }
-});
+    'postcss-import': {},
+    'cssnano': {},
+    'postcss-cssnext': {
+      browsers: ['last 2 versions', '> 5%'],
+    },
+  },
+};
