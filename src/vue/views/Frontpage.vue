@@ -1,29 +1,18 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap class="text-xs-center">
     <v-flex xs12>
       <v-card class="pa-4 custom-elevation">
         <h1 class="display-3">Frontpage</h1>
-        <p>{{ message }}</p>
+        <p>Welcome, and thank you for cloning/downloading my repository. I hope you will find it as useful as I do. I've put a lot of thought and work into this, relatively small project. <br>
+        This project is meant for a quick way to have a Webpack config ready to be used, integrated with Vue and Vuetify. Have a component you want to test out? Clone this repo. Have a feature you want to mess with? Clone this repo. Have some adjustments to this project.... You get the idea.</p>
 
-        <v-layout row wrap>
-          <v-flex xs12>
-            <span>Have a cup of coffee:
-              <font-awesome-icon icon="cog" />
-            </span>
-          </v-flex>
-        </v-layout>
+        <p>If you find the project architecture useful, feel free to steal it. If you do, I would be honored.<br>
+        Now comes the time, where you use this project to create something. Use some of the components, views and files as guidelines, a skeleton of sorts, to quickly mock something up and create something.</p>
 
-        <v-layout row wrap>
-          <v-flex xs12>
-            <span>Something something Vue:
-              <font-awesome-icon class="v-logo" :icon="['fab', 'vuejs']" />
-            </span>
-          </v-flex>
-        </v-layout>
+        <h3>Your next project is just on the other side of this door!</h3>
 
-        <my-component></my-component>
-
-        <v-text-field v-validate="'email|required'" data-vv-name="email" :error-messages="errors.collect('email')"></v-text-field>
+        <font-awesome-icon :icon="['fas','dungeon']" :size="'10x'" class="mt-5"/>
+  
       </v-card>
     </v-flex>
   </v-layout>
@@ -34,7 +23,7 @@
   export default {
     data() {
       return {
-        message: "I am the frontpage. Commodo esse ipsum adipisicing quis exercitation ea proident exercitation ullamco laborum dolor. Voluptate id eiusmod labore culpa ex culpa nisi nostrud consectetur cupidatat. Tempor non do eiusmod quis est velit. Et in velit consectetur voluptate. Dolore Lorem culpa deserunt nostrud ipsum consectetur velit commodo occaecat dolore excepteur. Reprehenderit est sint ut minim commodo enim aute veniam consectetur excepteur duis."
+        message: null
       }
     }
   }
