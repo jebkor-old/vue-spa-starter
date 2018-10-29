@@ -4,27 +4,14 @@
       "experimentalDecorators": true,
       "baseUrl": "./",
       "paths": {
-          "@ec.declarations*": [
-              "./src/ts/declarations*"
-          ],
-          "@ec.models*": [
-              "./src/ts/model*"
-          ],
-          "@ec.services*": [
-              "./src/ts/services*"
-          ],
-          "@ec.types*": [
-              "./src/ts/types*"
-          ],
-          "@ec.utilities*": [
-              "./src/ts/utilities*"
-          ],
-          "@ec.vendor*": [
-              "./src/ts/vendor*"
-          ],
-          "@ec.vue*": [
-              "./src/ts/vue*"
-          ]
+          "@root*": [ "./src*"],
+          "@declarations*": [ "./src/ts/declarations*" ],
+          "@models*": [ "./src/ts/model*" ],
+          "@services*": [ "./src/ts/services*" ],
+          "@types*": [ "./src/ts/types*" ],
+          "@utilities*": [ "./src/ts/utilities*" ],
+          "@vendor*": [ "./src/ts/vendor*" ],
+          "@vue*": [ "./src/ts/vue*" ]
       },
       "allowJs": true,
       "sourceMap": true,
