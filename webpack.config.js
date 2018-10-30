@@ -8,7 +8,12 @@ const loaders = require('./loaders'); // Seperate file with all of the loaders
 
 module.exports = {
   entry: {
-    main: ['./src/ts/index.ts']
+    main: [
+      './node_modules/vuetify/dist/vuetify.css', // vendor style
+      './node_modules/toastr/toastr.scss', // vendor style
+      './src/scss/all.scss', // main css
+      './src/ts/index.ts' // main javascript/ts
+    ]
   },
   module: {
     rules: [

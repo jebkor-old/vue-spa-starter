@@ -31,7 +31,7 @@ const VueLoader = {
   options: {
     loaders: {
       scss:
-        'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!postcss-loader!sass-loader',
+        'style-loader!MiniExtractPlugin.loader!css-loader?minimize=true!postcss-loader?path=./postcss.config.js!sass-loader',
       js: 'babel-loader',
       ts: 'ts-loader',
       css: 'style-loader!css-loader'

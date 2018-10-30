@@ -2,13 +2,6 @@ Vue.config.productionTip = false;
 
 
 
-// css vendor libraries
-import 'vuetify/dist/vuetify.css';
-// custom css
-import '../scss/all.scss';
-
-
-
 // import dependencies
 import "@babel/polyfill";
 import Vue from "vue";

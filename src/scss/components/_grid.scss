@@ -1,5 +1,6 @@
 .grid-container {
   .user-profile {
+    background-color: randomColor(random, yellow);
     display: grid;
     grid-template-areas:
       'avatar'

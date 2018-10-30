@@ -10,10 +10,6 @@
         <p>If you find the project architecture useful, feel free to steal it. If you do, I would be honored.<br>
           Now comes the time, where you use this project to create something. Use some of the components, views and files as guidelines, a skeleton of sorts, to quickly mock something up and create something.</p>
 
-        <h3>Your next project is just on the other side of this door!</h3>
-
-        <font-awesome-icon :icon="['fas','dungeon']" :size="'10x'" class="mt-5" />
-
       </v-card>
     </v-flex>
 
