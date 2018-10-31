@@ -1,18 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniExtractPlugin = require('mini-css-extract-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 
-const loaders = require('./loaders'); // Seperate file with all of the loaders
+const loaders = require('./webpack/loaders'); // Seperate file with all of the loaders
+const plugins = require('./webpack/plugins'); // Seperate file with all of the plugins
 
 module.exports = {
   entry: {
     main: [
-      './node_modules/vuetify/dist/vuetify.css', // vendor style
-      './node_modules/toastr/toastr.scss', // vendor style
-      './src/scss/all.scss', // main css
-      './src/ts/index.ts' // main javascript/ts
+      './node_modules/vuetify/dist/vuetify.css',
+      './node_modules/toastr/build/toastr.css',
+      './src/scss/all.scss',
+      './src/js/index.js' // main javascript/ts
     ]
   },
   module: {
@@ -20,7 +18,7 @@ module.exports = {
       loaders.FileLoader,
       loaders.CssLoader,
       loaders.JSLoader,
-      loaders.TSLoader,
+      // loaders.TSLoader,
       loaders.VueLoader
     ]
   },
@@ -40,11 +38,9 @@ module.exports = {
     }
   },
   plugins: [
-    new VueLoaderPlugin(),
-    new MiniExtractPlugin({
-      filename: 'styles/[name].css'
-    }),
-    new ForkTsCheckerPlugin()
+    plugins.VueLoaderPlugin,
+    plugins.StyleLintPlugin,
+    plugins.MiniExtractPlugin
   ],
   optimization: {
     splitChunks: {

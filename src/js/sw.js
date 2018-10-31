@@ -10,10 +10,10 @@ var cacheFirstFiles = [
 var networkFirstFiles = [
   './',
   './index.html',
-  './dist/styles/main.css', 
+  './dist/styles/main.css',
   './dist/styles/vendor.css',
   './dist/main.js',
-  './dist/vendor.js'
+  './dist/vendor.js',
 ];
 
 // Below is the service worker code.
@@ -21,58 +21,43 @@ var networkFirstFiles = [
 var cacheFiles = cacheFirstFiles.concat(networkFirstFiles);
 
 self.addEventListener('install', event => {
-  console.log("Installing SW...");
+  console.log('Installing SW...');
   event.waitUntil(
     caches.open(VERSION).then(cache => {
-      console.log("SW installed.");
+      console.log('SW installed.');
       return cache.addAll(cacheFiles);
-    })
+    }),
   );
 });
 
-
-
-self.addEventListener("activate", event => {
-  console.log("Activating SW...");
+self.addEventListener('activate', event => {
+  console.log('Activating SW...');
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.filter(cacheName => {
-          console.log("SW Activated.");
-          return;
-        }).map(cacheName => {
-          console.log("SW Activated.");
-          return caches.delete(cacheName);
-        })
+        cacheNames
+          .filter(cacheName => {
+            console.log('SW Activated.');
+            return;
+          })
+          .map(cacheName => {
+            console.log('SW Activated.');
+            return caches.delete(cacheName);
+          }),
       );
-    })
+    }),
   );
 });
-
-
 
 self.addEventListener('fetch', event => {
-  console.log("Fetching cache...");
+  console.log('Fetching cache...');
   event.respondWith(
     fetch(event.request).catch(function() {
-      console.log("Cache fetched.");
+      console.log('Cache fetched.');
       return caches.match(event.request);
-    })
+    }),
   );
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // Names of the two caches used in this version of the service worker.
 // // Change to v2, etc. when you update any of the local resources, which will

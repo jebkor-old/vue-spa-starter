@@ -33,7 +33,7 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
   import NProgress from "nprogress";
 
   export default {

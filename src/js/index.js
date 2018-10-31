@@ -9,7 +9,6 @@ import Vuetify from 'vuetify';
 import VueRouter from 'vue-router';
 import Notify from 'vue-notifyjs/dist/vue-notifyjs';
 import VueProgressBar from 'vue-progressbar';
-import VeeValidate from 'vee-validate';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog, faFile, faDungeon } from '@fortawesome/free-solid-svg-icons';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
@@ -27,7 +26,6 @@ library.add(
   faVuejs
 );
 Vue.use(VueRouter);
-Vue.use(VeeValidate);
 Vue.use(Vuetify, {
   theme: {
     primary: '#1976D2',
@@ -56,9 +54,9 @@ Vue.use(VueProgressBar, {
 
 
 // import files
-import App from '../vue/App.vue';
 import router from '../vue/router/Routes';
 import store from "../vue/store/Store";
+import App from '../vue/App.vue';
 import '../vue/components/MyComponent.vue';
 
 
@@ -76,3 +74,6 @@ const VueApp = new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
+
+

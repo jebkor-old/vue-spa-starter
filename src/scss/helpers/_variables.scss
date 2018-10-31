@@ -1,7 +1,7 @@
 @import "vuetify-theme";
 
 $color-shade-amount: 15%;
-$color-trans-amount: 0.5;
+$color-trans-amount: .5;
 
 
 $colors: (
@@ -48,10 +48,10 @@ $colors: (
     transparent: transparentize($color-error, $color-trans-amount)
   ),
   greyscale: (
-    black: rgba(0, 0, 0, 0.87),
-    dark-grey: rgba(0, 0, 0, 0.54),
-    grey: rgba(0, 0, 0, 0.38),
-    light-grey: rgba(0, 0, 0, 0.11),
+    black: rgba(0, 0, 0, .87),
+    dark-grey: rgba(0, 0, 0, .54),
+    grey: rgba(0, 0, 0, .38),
+    light-grey: rgba(0, 0, 0, .11),
     white: rgba(255, 255, 255, 1)
   )
 );

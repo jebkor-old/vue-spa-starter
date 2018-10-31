@@ -4,11 +4,12 @@
 
 
 .stuff {
-    color: #000000;
+  color: #000000;
 }
 
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition-property: opacity;
   transition-duration: .25s;
 }
@@ -17,10 +18,7 @@
   transition-delay: .25s;
 }
 
-.fade-enter, .fade-leave-active {
+.fade-enter,
+.fade-leave-active {
   opacity: 0
-}
-
-.fuck {
-  text-transform: uppercase; 
 }

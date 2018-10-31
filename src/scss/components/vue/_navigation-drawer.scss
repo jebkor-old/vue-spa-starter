@@ -1,21 +1,18 @@
-.application.theme--light {
-  .v-list .v-list__tile {
-    &.fa-icon {
-      color: rgba(0,0,0,.54) !important;
-      font-size: 16px;
-      margin-left: 5px;
-    }
-  
-    .fa-icon  {
-      color: rgba(0,0,0,.54) !important;
-      font-size: 16px;
-      margin-left: 5px;
-    }
+.v-list .v-list__tile {
 
-    &--active {
-      .fa-icon {
-        color: inherit !important;
-      }
-    }
+  &.fa-icon {
+    color: rgba(0, 0, 0, .54) !important;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .fa-icon {
+    color: rgba(0, 0, 0, .54) !important;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  &--active .fa-icon {
+    color: inherit !important;
   }
 }

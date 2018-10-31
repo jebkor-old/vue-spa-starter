@@ -37,8 +37,7 @@
   </v-layout>
 </template>
 
-<script lang="ts">
-  import LoadingService from "../../ts/services/LoadingService";
+<script>
   export default {
     data() {
       return {
