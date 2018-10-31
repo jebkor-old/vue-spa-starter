@@ -3,37 +3,19 @@
   <v-layout row wrap>
     <v-flex xs12 class="text-xs-center">
       <v-card class="pa-4 custom-elevation">
-        <h1 class="display-3">Frontpage</h1>
-        <p>Welcome, and thank you for cloning/downloading my repository. I hope you will find it as useful as I do. I've put a lot of thought and work into this, relatively small project. <br>
-          This project is meant for a quick way to have a Webpack config ready to be used, integrated with Vue and Vuetify. Have a component you want to test out? Clone this repo. Have a feature you want to mess with? Clone this repo. Have some adjustments to this project.... You get the idea.</p>
+        <h1 class="display-3">Frontpage View</h1>
+        <p>Insert content here...</p>
+        <p>Ea non amet dolor irure officia anim officia aliquip exercitation. Cupidatat sunt non eu aliquip nulla nulla dolore Lorem amet duis nulla. Velit eiusmod do ea dolor ullamco cupidatat enim deserunt culpa magna sunt anim. Nisi dolore pariatur sit fugiat non exercitation qui excepteur reprehenderit in velit. Aliqua anim do ex cupidatat minim esse dolore pariatur amet. Aute excepteur mollit deserunt ex quis ex adipisicing cillum tempor esse minim est ex. Eiusmod deserunt sit voluptate irure labore enim adipisicing ad dolor dolor.
 
-        <p>If you find the project architecture useful, feel free to steal it. If you do, I would be honored.<br>
-          Now comes the time, where you use this project to create something. Use some of the components, views and files as guidelines, a skeleton of sorts, to quickly mock something up and create something.</p>
+          Amet amet officia adipisicing duis officia ipsum et officia labore ad. Veniam ad laborum est aliquip mollit commodo elit ut laborum. Sunt aliquip magna quis ullamco non voluptate nostrud aliqua do quis sit voluptate. Amet magna aliquip commodo ullamco et nulla nulla labore esse laboris laboris ipsum nisi sunt.
+
+          Aliquip dolor velit id officia exercitation laboris sunt ea laboris commodo aliqua ea. Dolor commodo eu laborum culpa ullamco aliqua aute esse culpa adipisicing. Lorem exercitation reprehenderit consectetur deserunt.
+
+          Duis tempor sit pariatur id. Laboris minim dolore consectetur anim irure. Quis est anim adipisicing anim pariatur exercitation anim nisi. Non minim non amet ea do non enim ipsum et dolore eiusmod. Dolor laboris ut aliquip fugiat sint amet aliquip.</p>
 
       </v-card>
     </v-flex>
 
-    <v-flex xs12>
-      Grid test
-
-      <div class="grid-container grid">
-        <div class="user-profile">
-
-          <span class="user-profile__username">
-            Rob Ott
-          </span>
-
-          <img src="https://placehold.it/150x100" class="user-profile__avatar" />
-
-          <p class="user-profile__bio">
-            made of metal
-            likes animals
-            hates water skiing
-          </p>
-
-        </div>
-      </div>
-    </v-flex>
   </v-layout>
 </template>
 

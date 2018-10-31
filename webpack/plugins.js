@@ -5,9 +5,9 @@ const _StyleLintPlugin = require('stylelint-webpack-plugin');
 const _HardSourcePlugin = require('hard-source-webpack-plugin');
 
 
-const HardSourcePlugin();
+const HardSourcePlugin = new _HardSourcePlugin();
 const VueLoaderPlugin = new _VueLoaderPlugin();
-const MiniExtractPlugin = new _MiniExtractPlugin('styles/[name].css');
+const MiniExtractPlugin = new _MiniExtractPlugin('[name].css');
 const StyleLintPlugin = new _StyleLintPlugin({
   configFile: path.resolve(__dirname, 'stylelint.config.js'),
   context: path.resolve(__dirname, '../src/scss'),
@@ -15,7 +15,6 @@ const StyleLintPlugin = new _StyleLintPlugin({
   failOnError: false,
   quiet: false
 });
-
 
 
 module.exports = {
