@@ -2,8 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
+const plugins = require('./webpack/plugins');
 
-const HardSourcePlugin = require('hard-source-webpack-plugin');
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -12,7 +12,9 @@ module.exports = merge(baseConfig, {
     pathinfo: false
   },
   devtool: 'source-map',
-  plugins: [new HardSourcePlugin()],
+  plugins: [
+    plugins.HardSourcePlugin
+  ],
   optimization: {
     nodeEnv: "development",
     minimize: false

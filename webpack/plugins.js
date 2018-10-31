@@ -2,7 +2,11 @@ const path = require('path');
 const _VueLoaderPlugin = require('vue-loader/lib/plugin');
 const _MiniExtractPlugin = require('mini-css-extract-plugin');
 const _StyleLintPlugin = require('stylelint-webpack-plugin');
+const _HardSourcePlugin = require('hard-source-webpack-plugin');
 
+
+const HardSourcePlugin();
+const VueLoaderPlugin = new _VueLoaderPlugin();
 const MiniExtractPlugin = new _MiniExtractPlugin('styles/[name].css');
 const StyleLintPlugin = new _StyleLintPlugin({
   configFile: path.resolve(__dirname, 'stylelint.config.js'),
@@ -11,12 +15,12 @@ const StyleLintPlugin = new _StyleLintPlugin({
   failOnError: false,
   quiet: false
 });
-const VueLoaderPlugin = new _VueLoaderPlugin();
 
 
 
 module.exports = {
   MiniExtractPlugin: MiniExtractPlugin,
   StyleLintPlugin: StyleLintPlugin,
-  VueLoaderPlugin: VueLoaderPlugin
+  VueLoaderPlugin: VueLoaderPlugin,
+  HardSourcePlugin: HardSourcePlugin
 };
