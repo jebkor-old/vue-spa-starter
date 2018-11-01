@@ -7,7 +7,6 @@ const plugins = require('./webpack/plugins'); // Seperate file with all of the p
 module.exports = {
   entry: {
     main: [
-      './node_modules/toastr/build/toastr.css',
       './src/scss/all.scss',
       './src/js/index.js' // main javascript/ts
     ]
