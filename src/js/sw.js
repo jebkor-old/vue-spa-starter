@@ -10,10 +10,11 @@ var cacheFirstFiles = [
 var networkFirstFiles = [
   './',
   './index.html',
-  './dist/styles/main.css',
-  './dist/styles/vendor.css',
-  './dist/main.js',
-  './dist/vendor.js',
+  './dist/main.css',
+  './dist/vendor.css',
+  './dist/main.min.js',
+  './dist/2.min.js',
+  './dist/vendor.min.js',
 ];
 
 // Below is the service worker code.

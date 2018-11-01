@@ -7,7 +7,6 @@ const plugins = require('./webpack/plugins'); // Seperate file with all of the p
 module.exports = {
   entry: {
     main: [
-      './node_modules/vuetify/dist/vuetify.css',
       './node_modules/toastr/build/toastr.css',
       './src/scss/all.scss',
       './src/js/index.js' // main javascript/ts
@@ -17,6 +16,8 @@ module.exports = {
     rules: [
       loaders.FileLoader,
       loaders.CssLoader,
+      loaders.ScssLoader,
+      loaders.StylusLoader,
       loaders.JSLoader,
       // loaders.TSLoader,
       loaders.VueLoader
@@ -40,7 +41,8 @@ module.exports = {
   plugins: [
     plugins.VueLoaderPlugin,
     plugins.StyleLintPlugin,
-    plugins.MiniExtractPlugin
+    plugins.MiniExtractPlugin,
+    plugins.VuetifyLoaderPlugin
   ],
   optimization: {
     splitChunks: {

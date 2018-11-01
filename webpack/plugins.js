@@ -3,6 +3,7 @@ const _VueLoaderPlugin = require('vue-loader/lib/plugin');
 const _MiniExtractPlugin = require('mini-css-extract-plugin');
 const _StyleLintPlugin = require('stylelint-webpack-plugin');
 const _HardSourcePlugin = require('hard-source-webpack-plugin');
+const _VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
 
 const HardSourcePlugin = new _HardSourcePlugin();
@@ -15,11 +16,13 @@ const StyleLintPlugin = new _StyleLintPlugin({
   failOnError: false,
   quiet: false
 });
+const VuetifyLoaderPlugin = new _VuetifyLoaderPlugin();
 
 
 module.exports = {
   MiniExtractPlugin: MiniExtractPlugin,
   StyleLintPlugin: StyleLintPlugin,
   VueLoaderPlugin: VueLoaderPlugin,
-  HardSourcePlugin: HardSourcePlugin
+  HardSourcePlugin: HardSourcePlugin,
+  VuetifyLoaderPlugin: VuetifyLoaderPlugin
 };

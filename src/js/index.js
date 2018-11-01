@@ -3,9 +3,12 @@ Vue.config.productionTip = false;
 
 
 // import dependencies
-import "@babel/polyfill";
-import Vue from "vue";
-import Vuetify from 'vuetify';
+import '@babel/polyfill';
+import Vue from 'vue';
+
+import 'vuetify/src/stylus/app.styl';
+import Vuetify from 'vuetify/lib';
+
 import VueRouter from 'vue-router';
 import Notify from 'vue-notifyjs/dist/vue-notifyjs';
 import VueProgressBar from 'vue-progressbar';

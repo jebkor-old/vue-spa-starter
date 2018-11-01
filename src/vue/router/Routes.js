@@ -2,7 +2,8 @@ import Router from 'vue-router';
 import NProgress from "nprogress";
 
 // Import the .vue files, the router views.
-import Frontpage from '../views/Frontpage.vue';
+// import Frontpage from '../views/Frontpage.vue';
+const Frontpage = () => import('../views/Frontpage.vue');
 
 // Initialize and setup the routes
 const Routes = new Router({

@@ -10,7 +10,8 @@ const JSLoader = {
       '@babel/env'
     ],
     plugins: [
-      'transform-es2015-shorthand-properties'
+      'transform-es2015-shorthand-properties',
+      '@babel/plugin-syntax-dynamic-import'
     ]
   }
 };
@@ -38,7 +39,21 @@ const VueLoader = {
 };
 
 const CssLoader = {
-  test: /\.(css|scss)$/,
+  test: /\.(css)$/,
+  use: [
+    'style-loader',
+    {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        minimize: true
+      }
+    }    
+  ]
+};
+
+const ScssLoader = {
+  test: /\.(sass|scss)$/,
   use: [
     'style-loader',
     MiniExtractPlugin.loader,
@@ -61,9 +76,32 @@ const CssLoader = {
   ]
 };
 
+const StylusLoader = {
+  test: /\.(stylus|styl)$/,
+  use: [
+    'style-loader',
+    MiniExtractPlugin.loader,
+    {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        minimize: true
+      }
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        config: {
+          path: __dirname + '/postcss.config.js'
+        }
+      }
+    },
+    'stylus-loader'
+  ]
+};
+
 const FileLoader = {
   test: /\.(png|svg|jpg|jpeg|gif)$/,
-  exclude: /node_modules/,
   use: [{
     loader: 'url-loader',
     options: {
@@ -77,5 +115,7 @@ module.exports = {
   // TSLoader: TSLoader,
   VueLoader: VueLoader,
   CssLoader: CssLoader,
-  FileLoader: FileLoader
+  ScssLoader: ScssLoader,
+  FileLoader: FileLoader,
+  StylusLoader: StylusLoader
 };
