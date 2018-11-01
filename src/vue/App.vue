@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" v-cloak>
     <v-navigation-drawer v-model="drawer" fixed clipped left app>
       <v-list dense>
         <v-list-tile v-for="(link, index) in routes" :key="index" :to="link.path">
@@ -15,7 +15,7 @@
     </v-navigation-drawer>
 
     <v-toolbar color="primary" dark fixed clipped-left app>
-      <v-toolbar-side-icon role="menu-toggle" @click.stop="drawer = !drawer">
+      <v-toolbar-side-icon aria-label="menu toggle" role="button" @click.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
@@ -44,7 +44,21 @@
         drawer: false,
         drawerMobile: false,
         message: "stuff",
-        routes: this.$router.options.routes
+        routes: this.$router.options.routes,
+        metaInfo: {
+          // Children can override the title.
+          title: 'My Page Title',
+          // Result: My Page Title ← My Site
+          // If a child changes the title to "My Other Page Title",
+          // it will become: My Other Page Title ← My Site
+          titleTemplate: '%s ← My Site',
+          // Define meta tags here.
+          meta: [
+            { "http-equiv": 'Content-Type', content: 'text/html; charset=utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1'},
+            { name: 'description', content: 'I have things here on my site.' }
+          ]
+        }
       }
     }
   }

@@ -10,8 +10,7 @@ import 'vuetify/src/stylus/app.styl';
 import Vuetify from 'vuetify/lib';
 
 import VueRouter from 'vue-router';
-import Notify from 'vue-notifyjs/dist/vue-notifyjs';
-import VueProgressBar from 'vue-progressbar';
+import VueMeta from 'vue-meta';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog, faFile, faDungeon } from '@fortawesome/free-solid-svg-icons';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
@@ -29,6 +28,7 @@ library.add(
   faVuejs
 );
 Vue.use(VueRouter);
+Vue.use(VueMeta);
 Vue.use(Vuetify, {
   theme: {
     primary: '#1976D2',
@@ -41,18 +41,6 @@ Vue.use(Vuetify, {
     userdefined: "#ff00ff"
   }
 });
-Vue.use(Notify, {
-  type: 'primary',
-  timeout: 5000,
-  horizontalAlign: 'right',
-  verticalAlign: 'bottom'
-});
-Vue.use(VueProgressBar, {
-  color: 'rgb(143, 255, 199)',
-  failedColor: 'red',
-  height: '2px'
-});
-
 
 
 
@@ -60,14 +48,11 @@ Vue.use(VueProgressBar, {
 import router from '../vue/router/Routes';
 import store from "../vue/store/Store";
 import App from '../vue/App.vue';
-import '../vue/components/MyComponent.vue';
-
 
 
 
 // Component registers
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
 
 
 

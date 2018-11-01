@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color">
   <link rel="manifest" href="/manifest.json">
   <title>Document</title>
+  <meta name="description" content="">
 </head>
 
 <body>
@@ -19,10 +20,7 @@
 
 
   
-  <noscript id="deferred-styles">
-    <link rel="stylesheet" href="../dist/vendor.css">
-    <link rel="stylesheet" href="../dist/main.css">
-  </noscript>
+  
 
   <script type="text/javascript">
     // Load CSS
@@ -38,6 +36,13 @@
     if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
     else window.addEventListener('load', loadDeferredStyles);
   </script>
+  
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" href="../dist/vendor.css">
+    <link rel="stylesheet" href="../dist/main.css">
+  </noscript>
+
+
   <script src="./dist/vendor.min.js"></script>
   <script src="./dist/2.min.js"></script>
   <script src="./dist/main.min.js"></script>

@@ -23,7 +23,15 @@
   export default {
     data() {
       return {
-        message: null
+        message: null,
+        metaInfo: {
+          meta: [
+            {
+              name: 'description',
+              content: 'My awesome description'
+            }
+          ]
+        }
       }
     }
   }

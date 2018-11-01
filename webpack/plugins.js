@@ -4,6 +4,7 @@ const _MiniExtractPlugin = require('mini-css-extract-plugin');
 const _StyleLintPlugin = require('stylelint-webpack-plugin');
 const _HardSourcePlugin = require('hard-source-webpack-plugin');
 const _VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+const _PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 
 const HardSourcePlugin = new _HardSourcePlugin();
@@ -17,6 +18,24 @@ const StyleLintPlugin = new _StyleLintPlugin({
   quiet: false
 });
 const VuetifyLoaderPlugin = new _VuetifyLoaderPlugin();
+const PrerenderSpaPlugin = new _PrerenderSpaPlugin({
+  // Required - The path to the webpack-outputted app to prerender.
+  staticDir: path.join(__dirname, '../'),
+  indexPath: path.join(__dirname, '../', 'index.template.html'),
+  // Required - Routes to render.
+  routes: ['/'],
+  outputDir: path.join(__dirname, '../'),
+  postProcessHtml: function (context) {
+    var titles = {
+      '/': 'My home page',
+      '/about': 'My awesome about page'
+    }
+    return context.html.replace(
+      /<title>[^<]*<\/title>/i,
+      '<title>' + titles[context.route] + '</title>'
+    )
+  }
+});
 
 
 module.exports = {
