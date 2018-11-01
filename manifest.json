@@ -1,4 +1,15 @@
 {
   "short_name": "Vue SPA",
-  "name": "Vue SPA Starter"
+  "name": "Vue SPA Starter",
+  "start_url": "/",
+  "icons": [{
+    "src": "/dist/images/logo-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/dist/images/logo-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }]
 }
