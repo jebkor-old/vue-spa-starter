@@ -15,6 +15,7 @@ var networkFirstFiles = [
   './dist/main.min.js',
   './dist/2.min.js',
   './dist/vendor.min.js',
+  './manifest.json'
 ];
 
 // Below is the service worker code.
