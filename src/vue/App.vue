@@ -15,7 +15,7 @@
     </v-navigation-drawer>
 
     <v-toolbar color="primary" dark fixed clipped-left app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer">
+      <v-toolbar-side-icon role="menu-toggle" @click.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
